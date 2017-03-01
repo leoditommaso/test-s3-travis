@@ -9,10 +9,10 @@ script:
 - bundle exec jekyll build
 deploy:
   provider: s3
-  bucket: mikroways.net
+  bucket: "mikroways.net"
   skip_cleanup: true
-  region: us-east-1
-  local_dir: _site
+  region: "us-east-1"
+  local_dir: "_site"
   on:
     branch: master
   dot_match: true
