@@ -1,0 +1,22 @@
+language: ruby
+cache: bundler
+rvm:
+- 2.3.1
+branches:
+  only:
+  - master
+script:
+- bundle exec jekyll build
+deploy:
+  provider: s3
+  bucket: mikroways.net
+  skip_cleanup: true
+  region: us-east-1
+  local_dir: _site
+  on:
+    branch: master
+  dot_match: true
+  secret_access_key:
+    secure: MvH/pbu62q5rfSN+bnH+sT7Oluam8SSLbeOf3fc04ZBgIG1pMtBOx2blc2mmn7Pt0Sbyy90CVNAhkfuclTe3B+SxE7nfM+mrKrO3ioQr2o+aXVgxAEKkgFLyQoBqlw8k61IdT5Av9k0ZuCavJyXjx45frsTZftXo8AiFPdBcwWcTNs5YqbBzyeDzbuEVwOX4Gv8zaB/z36FgE032FGVTxCLonLL1654CSE1e2EEbWJ9hWYHXSK9DqY+4Nw3+WEXE35iA6fskA7xvn6xW6fzvPI+KWj+ZLNUbxqSwvBGyqNpTvwMrw8Mi0LanYcbt2L1+oaXJO5RSNL8IaIsW4bryem57iJRwNg7qNuLdeAerwYLi0c+HfF3se0EJO7EJf2ZHWwgQx7cniLfzYcpPvBT5mGHTf4rsEz4u7yKM0Qba912cTp+aSXwMv+jfJzmfIqrUNvNNsuVed2Jx2uvJhHiGrAwGoFk1tpU6mJqHBULgojPfy54Q5wqXhV11SP6J2Gt8xa55w+0hcEYfEsbnFMqAtzRUm2ginrub+hoWO9k2V0FzQIZ36iYRqYEx6WoAzwd0/6jiN1nAKyl+cgCS/vIQpkNbiXZ1E3/uY27ldOImWTb8qsTvxidJ8DAdMkptEFvNr0MFBBHOdzA5LUtysBA8k2ffO25xgWWmmPgNdgj9jII=
+  access_key_id:
+    secure: gMnAnhS7mDoDzTiFRS29Rs72CSnTfXPfXJ3SNw0q9yLmr1RfE7w3v7p1PVDQGaX28XxGesqHSMxSkmIzEpbhFaxs33euDBXWirP/i22Kd/I0xrUPngNqleiuV/mYYfL1N/J8j9ZPWW4JNnjqdLM00gWIBaBHwjTtejWzgVNABqGl41Z0cXYCDy7H3wrzuCQxk19xqK2P2e6CbOSHcKNcUqSqQA/vl8/9V/NfgH/v8lWPkDkkUkj/56znGj/H6hDshB+93sde2/C0u9nYcgcH3Kabj9pG99eOSNfHIXZ0TfZAqZPhRXUxenhHzKK89EPjti+XW9dCXXGx2ei78iY/pHwWekCPIw0WTGi1eO3YV2aVKGmnOOQva22rxo8f5kot94L9NzMIBdDhgYFhI70vs8FCWgPURlZ1Q0c0yu28HOJNBufu51Xz2jEnZGLlCk+rLa/BNg3Mq4NCGDYOioDeAKi0LJQ85nGH44h3LmF7kYz8q/avI1pMhX8EbNFEQgmRN5Gmmrpq41AUyHJJ1/KGacyQ86kb24A4rJmo7971vlu2YEUtl5TTk6VoqbLScfqCpHmN3VJBdlEj+62rOVjifykEFEzrfbTmA7laXpPj1KnxpjFf5734zevWgkAUPZ+qzVCY+0RuUD53Efe03PO9fVqkUixqJwR+eXF+nfm1eJ8=
