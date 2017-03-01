@@ -9,9 +9,9 @@ script:
 - bundle exec jekyll build
 deploy:
   provider: s3
-  access_key_id: AKIAI2MZLGD63L4NFXHQ
-  secret_access_key:
-    secure: Tfvxy/egoFjwq299eXczGNlL6hUM+JOh2XslFKvdq/TkjT9lVI4Ru/Gf40K3itqu0M5eib0rb13KJPBjy+YAfT+hIR3jdKXoWRUoWZYksbs/W+uwrFYiL5s0M2zO21rv18e6xrPmJZx5G8Y5P6NhfQvjdbnxazTHTw+TugZw+dr5wFAP3udwJmSIlgH155K5X4aBWhFaRIgsrpLTHPFd+q495JTb1+b3sZf7qBzL8DHrFo6YCSNeU92AW0XtajJ1SDtwAy3/YwLZcqltZIG91dXcBISk/qYmnKjcwpT/u2qUq+GhD882nntegUzWF8NG89x9VXxtl5YBaru666bCJlv2eJc2FEXbvSIFktVDLgE8OJVm7zXwS8unjtkvndDY+tmJjxjwuaTNdAjxXAqFZx7BLZsK+0P3U1GpBKknqOfV88W5S47Cxdgd0a1TY5vsd5y3JmTZb3PFu/P9sQhQRFEjKuFnnihpUdX+Y4134Gp3mRvom9GhsCk0gnjxxHehOzDqALlzHTmmX8vfUeD5Rj0vsRVA/Sfih3nUsOMKxXJBUOGvl/IQGoTxO0LiMIflo6F1Z4pH7d8HtHBfZKvlrTpt3kI342rW3/bRrOLnnZdLwh/7kbzYGvJzeIuUGDzNlABhV9XUlnmsOJJ5q5rWY8eoXtn+EoG1SUwIj6WdVQI=
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_KEY_ID
+  region: $AWS_REGION
   bucket: mikroways.net
   local-dir: _site
   acl: public_read
