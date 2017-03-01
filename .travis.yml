@@ -13,5 +13,5 @@ deploy:
   secret_access_key: $AWS_SECRET_KEY_ID
   region: $AWS_REGION
   bucket: mikroways.net
-  local_dir: _site
+  local_dir: /home/travis/build/leoditommaso/test-s3-travis/_site
   acl: public_read
