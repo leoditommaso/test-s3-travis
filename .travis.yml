@@ -5,9 +5,11 @@ rvm:
 branches:
   only:
   - master
+before_install:
+- sudo apt-get -qq update
+- sudo apt-get install -y python-pip
 script:
 - bundle exec jekyll build
-- apt-get install -y python-pip
 - pip install awscli
 deploy:
   provider: s3
