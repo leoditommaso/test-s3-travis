@@ -7,10 +7,9 @@ branches:
   - master
 before_install:
 - sudo apt-get -qq update
-- sudo apt-get install -y python-pip
+- sudo pip install awscli
 script:
 - bundle exec jekyll build
-- pip install awscli
 deploy:
   provider: s3
   skip_cleanup: true
