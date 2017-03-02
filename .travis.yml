@@ -18,5 +18,5 @@ deploy:
   local_dir: _site
   acl: public_read
 after_deploy:
-- aws configure set preview.cloudfront true
-- aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
+- awscli configure set preview.cloudfront true
+- awscli cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
