@@ -7,7 +7,7 @@ branches:
   - master
 script:
 - bundle exec jekyll build
-- gem install awscli
+- pip install awscli
 deploy:
   provider: s3
   skip_cleanup: true
@@ -18,5 +18,5 @@ deploy:
   local_dir: _site
   acl: public_read
 after_deploy:
-- awscli configure set preview.cloudfront true
-- awscli cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
+- aws configure set preview.cloudfront true
+- aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
