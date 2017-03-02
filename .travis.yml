@@ -7,7 +7,7 @@ branches:
   - master
 script:
 - bundle exec jekyll build
-- apt-get install python-pip
+- apt-get install -y python-pip
 - pip install awscli
 deploy:
   provider: s3
